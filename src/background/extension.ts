@@ -113,7 +113,7 @@ export class Extension {
                     await new Promise((resolve) => this.awaiting.push(resolve));
                 }
                 const url = await this.tabs.getActiveTabURL();
-                return await this.getURLInfo(url);
+                return this.getURLInfo(url);
             },
             changeSettings: (settings) => this.changeSettings(settings),
             setTheme: (theme) => this.setTheme(theme),
@@ -407,7 +407,7 @@ export class Extension {
                 case ThemeEngines.dynamicTheme: {
                     const filter = {...filterConfig};
                     delete filter.engine;
-                    const fixes = getDynamicThemeFixesFor(url, frameURL, this.config.DYNAMIC_THEME_FIXES);
+                    const fixes = getDynamicThemeFixesFor(url, frameURL, this.config.DYNAMIC_THEME_FIXES, this.user.settings.enableForPDF);
                     const isIFrame = frameURL != null;
                     return {
                         type: 'add-dynamic-theme',
