@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "Dark Reader",
+    "name": "Durdina — Dark Reader",
     "version": "4.9.10",
-    "author": "Alexander Shutau",
+    "author": "Sidhant Gandhi",
     "description": "__MSG_extension_description__",
     "default_locale": "en",
     "browser_action": {
